@@ -47,7 +47,7 @@ const createStudent = (req, res) => {
 const assignTeacherToStudent = (req, res) => {
     let studentID = req.body.studentID
     let teacherID = req.body.teacherID
-    let teacher_name = teacherID.name
+    let teacher_name = (Teacher.findById(teacherID)).name
 
     let updatedData = {
         assignedTeacher: teacher_name
